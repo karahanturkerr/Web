@@ -1,0 +1,108 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url(software.jpg);
+    background-size: cover;
+}
+
+img{
+    width: 200px;
+    height: 250px;
+}
+
+.box{
+    width: 550px;
+    height: 700px;
+    background: black;
+    padding: 40px;
+    text-align: center;
+    margin: auto;
+    margin-top: 5%;
+    color: white;
+    font-family: sans-serif;
+}
+.aboutbox{
+    width: 550px;
+    height: 700px;
+    background: rgb(0, 58, 97);
+    padding: 40px;
+    text-align: center;
+    margin: auto;
+    margin-top: 5%;
+    color: white;
+    font-family: sans-serif;
+}
+.contactbox{
+    width: 550px;
+    height: 700px;
+    background: rgb(0, 58, 97);
+    padding: 40px;
+    text-align: center;
+    margin: auto;
+    margin-top: 5%;
+    color: white;
+    font-family: sans-serif;
+}
+.box img{
+    border-radius: 35%;
+    width: 200px;
+    height: 200px;
+    transition: 0.5s;
+    cursor: pointer;
+
+}
+
+.box img:hover{
+    transform: scale(0.9);
+}
+
+.box h1{
+    font-size: 40px;
+    letter-spacing: 4px;
+    font-weight: 100;
+}
+
+.box h5{
+    font-size: 20px;
+    font-weight: 100;
+    letter-spacing: 3px;
+}
+
+.box p{
+
+    letter-spacing: 2px;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+.contactbox li{
+    display: inline-block;
+    margin: 12px;
+    list-style: none;
+}
+
+.contactbox li a{
+    letter-spacing: 10px;
+    color: rgb(23, 23, 24);
+    font-size: 50px;
+    transition: all ease-in-out 250ms;
+}
+.contactbox li a:hover{
+    color :white;
+}
+
+.menu ul{
+    color: white;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.menu li{
+    text-decoration: none;
+    font-size: 40px;
+    display: inline;
+    padding: 30px;
+    
+}
