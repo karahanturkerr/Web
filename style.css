@@ -17,7 +17,7 @@ img{
     padding: 40px;
     text-align: center;
     margin: auto;
-    margin-top: 5%;
+    margin-top: 10%;
     color: white;
     font-family: sans-serif;
 }
@@ -28,7 +28,7 @@ img{
     padding: 40px;
     text-align: center;
     margin: auto;
-    margin-top: 5%;
+    margin-top: 10%;
     color: white;
     font-family: sans-serif;
 }
@@ -39,7 +39,7 @@ img{
     padding: 40px;
     text-align: center;
     margin: auto;
-    margin-top: 5%;
+    margin-top: 10%;
     color: white;
     font-family: sans-serif;
 }
@@ -50,7 +50,7 @@ img{
     padding: 40px;
     text-align: center;
     margin: auto;
-    margin-top: 5%;
+    margin-top: 10%;
     color: white;
     font-family: sans-serif;
 }
@@ -111,9 +111,16 @@ ul{
     list-style: none;
 }
 .menu li{
-    text-decoration: none;
-    font-size: 40px;
+    font-size: 50px;
     display: inline;
     padding: 30px;
     
+}
+
+a {
+
+    text-decoration: none;
+}
+.menu a:hover{
+    color: white;
 }
