@@ -6,24 +6,29 @@
     <title>Lamba</title>
 
     <style>
-        a{
+        body a{
             padding: 10px 30px;
             margin: 40px;
             font-size: 40px;
             text-decoration: none;
             color: beige;
             background-color:red;   
+            transition: 0.5s;
+        }
+        body a:hover{
+            transform: scale(1.5);
+            color: black;
         }
 
     </style>
 </head>
 <body>
     <center>
-
-        <a href="#" onclick = "document.getElementById('lamba').src = 'lamba_acik.jpg'">Ac</a>
+        <br>
+        <a href="#" onclick = "document.getElementById('lamba').src = 'lamba_acik.jpg'">Aç</a>
         <a href="#" onclick = "document.getElementById('lamba').src = 'lamba_kapali.jpg'">Kapat</a>
 
-    <br><br>
+    <br><br><br><br>
     <img id="lamba" src="lamba_kapali.jpg" alt="">
 
     
