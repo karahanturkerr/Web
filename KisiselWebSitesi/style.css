@@ -57,18 +57,24 @@ img{
 .box img{
     border-radius: 35%;
     width: 200px;
-    height: 200px;
-    transition: 0.5s;
+    height: 250px;
+    transition: 0.3s;
     cursor: pointer;
 
 }
 
 .box img:hover{
-    transform: scale(0.9);
+    transform: scale(0.7);
+}
+.box h1:hover{
+    transform: scale(1.5);
+
 }
 
 .box h1{
     font-size: 40px;
+    transition: 0.3s;
+
     letter-spacing: 4px;
     font-weight: 100;
 }
@@ -102,6 +108,11 @@ ul{
 }
 .contactbox li a:hover{
     color :white;
+}
+
+.contactbox ul{
+    margin: 50px;
+    padding: 100px;
 }
 
 .menu ul{
