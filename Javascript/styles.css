@@ -1,0 +1,71 @@
+
+
+.araba{
+    width: 500px;
+    height: 800px;
+    background: gray;
+    padding: 40px;
+    text-align: center;
+    margin: auto;
+    
+}
+
+button{
+    font-size: 40px;
+    color: red;
+    background-color: black;
+}
+
+button:hover{
+    transform: scale(0.5s);
+    color:yellow;
+}
+
+#girdi{
+    text-align: center;
+    padding: 10px 0px;
+}
+label{
+    font-size: 50px;
+}
+#markaEkle{
+    border: 2px solid;
+    border-radius: 10px;
+    width: 50%;
+    word-wrap: break-word;
+    font-size: 30px;
+}
+#modelEkle{
+    border: 2px solid;
+    border-radius: 10px;
+    width: 50%;
+    word-wrap: break-word;
+    font-size: 30px;
+}
+#renkEkle{
+    border: 2px solid;
+    border-radius: 10px;
+    width: 50%;
+    word-wrap: break-word;
+    font-size: 30px;
+}
+#fiyatEkle{
+    border: 2px solid;
+    border-radius: 10px;
+    width: 50%;
+    word-wrap: break-word;
+    font-size: 30px;
+}
+#toplamArac{
+    border: 2px solid;
+    border-radius: 10px;
+    width: 70%;
+    word-wrap: break-word;
+    font-size: 50px;
+}#toplamFiyat{
+    border: 2px solid;
+    border-radius: 10px;
+    width: 70%;
+    word-wrap: break-word;
+    font-size: 50px;
+}
