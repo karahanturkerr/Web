@@ -69,3 +69,10 @@ label{
     word-wrap: break-word;
     font-size: 50px;
 }
+select{
+    border: 2px solid;
+    border-radius: 10px;
+    width: 50%;
+    word-wrap: break-word;
+    font-size: 30px;
+}
