@@ -10,6 +10,8 @@
     
 }
 
+
+
 button{
     font-size: 40px;
     color: red;
@@ -75,4 +77,8 @@ select{
     width: 50%;
     word-wrap: break-word;
     font-size: 30px;
+}
+table{
+    margin-left: 43%;
+    padding: 20px;
 }

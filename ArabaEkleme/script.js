@@ -142,6 +142,20 @@ function ArabaEkle() {
                 Fiyat: fiyat,
 
             })
+
+            var table = document.querySelector("#table1");
+            var satir = table.insertRow(-1);
+
+            var SatirMarka = satir.insertCell(0);
+            var SatirModel = satir.insertCell(1);
+            var SatirRenk = satir.insertCell(2);
+            var SatirFiyat = satir.insertCell(3);
+
+            SatirMarka.innerHTML = x.name;
+            SatirModel.innerHTML = y.name;
+            SatirRenk.innerHTML = secilenRenk;
+            SatirFiyat.innerHTML = fiyat;
+
             Toplam = Number(Toplam) + Number(fiyat);
             //alert("Araba Eklendi!!!")
 
