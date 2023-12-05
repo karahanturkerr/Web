@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tasarim Kodlama</title>
+</head>
+ 
+<body>
+	Futbol: <input type="checkbox" id="hobi1" class="hobi"  value="Futbol" checked><br>
+	Yüzme: 	<input type="checkbox" id="hobi2" class="hobi"  value="Yüzme"><br>
+	Basket: <input type="checkbox" id="hobi3" class="hobi"  value="Basketbol"><br>
+	<button type="button" id="kontrol">Seçili Hobileri Yazdır</button>
+	
+	
+	<script>
+		var hobiler=document.querySelectorAll(".hobi"); //class adı ile uyuşan tüm nesneler
+		var kontrol=document.querySelector("#kontrol");//id ile uyuşan tek nesne
+		
+		kontrol.onclick=function(){
+			
+			//forEach ile tüm hobiler üzerinde döneceğiz
+			hobiler.forEach(function(element){
+				//seçili olan hobiyi bulmak için
+				if(element.checked==true)
+				{
+					window.alert(element.value);//seçili hobinin içindeki değer
+				}
+				
+			});
+		}
+	</script>
+</body>
+</html>

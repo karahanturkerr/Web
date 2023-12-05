@@ -1,78 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Araba</title>
-	<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 
 </head>
 <script>
-    
+
 </script>
 
 <body>
 
-    <div class="tablolar">
-<table border="1" id="table1" bordercolor="black">
-  <tr>
-    <th>Marka</th>
-    <th>Model</th>
-    <th>Renk</th>
-    <th>Fiyat</th>
-  </tr>
-  
-</table>
-    </div>
-    
+
+
 
 
     <div class="araba">
-        
+
         <center>
+            <div class="tablolar">
+                <table border="1" id="table1" bordercolor="black">
+                    <thead>
+                        <tr>
+                            <th>
+                            </th>
+                            <th>Plaka</th>
+                            <th>Marka</th>
+                            <th>Model</th>
+                            <th>Renk</th>
+                            <th>Fiyat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-            
-          
-        <div class="girdi">
-            <label>Marka : </label>
-            <select onchange="markaSec()" id="markaSelect">
-            </select>
+                        
+                        
+                    </tbody>
+
+                        
+
+
+                </table>
+            </div>
+            <div>
+                <button onclick="deleteRow()" id="sil">sil</button>
+                <button onclick="updateRow()" id="sil">güncelle</button>
+
+            </div>
+
+
+
+            <div class="girdi">
+                <label>Marka : </label>
+                <select onchange="markaSec()" id="markaSelect">
+                </select>
+                <br><br><br>
+                <label>Model : </label>
+                <select id="modelSelect">
+                </select>
+                <br><br><br>
+                <label>Renk : </label>
+                <select id="renkSelect">
+                </select>
+                <br><br><br>
+                <label for="fiyatEkle">Fiyat : </label>
+                <input type="number" id="fiyatEkle" />
+                <br><br>
+                <label for="plakaEkle">Plaka : </label>
+                <input type="text" id="plakaEkle" />
+                <br><br>
+
+            </div>
+
+            <div class="buton">
+                <button onclick="ArabaEkle()" id="ekle">Ekle</button>
+            </div>
             <br><br><br>
-            <label>Model : </label>
-            <select id="modelSelect">
-            </select>
             <br><br><br>
-            <label>Renk : </label>
-            <select id="renkSelect">
-            </select>
-            <br><br><br>
-            <label for="fiyatEkle">Fiyat : </label>
-            <input type="number" id="fiyatEkle" />
+
+            <label for="toplamArac">Toplam Araç</label>
             <br><br>
-        </div>
-        
-        <div class="buton">
-            <button onclick="ArabaEkle()">Ekle</button>
-        </div>
-        <br><br><br>
-        <br><br><br>
-        
-        <label  for="toplamArac">Toplam Araç</label>
-        <br><br>
-        <input type="number" id="toplamArac" />
+            <input type="number" id="toplamArac" />
 
-        <label  for="toplamFiyat">Toplam Fiyat</label>
-        <br><br>
-        <input type="number" id="toplamFiyat" />
+            <label for="toplamFiyat">Toplam Fiyat</label>
+            <br><br>
+            <input type="number" id="toplamFiyat" />
 
         </center>
 
     </div>
 
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 
 
 </body>
+
 </html>

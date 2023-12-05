@@ -2,7 +2,7 @@
 
 .araba{
     width: 500px;
-    height: 800px;
+    height: 1200px;
     background: gray;
     padding: 40px;
     text-align: center;
@@ -12,11 +12,17 @@
 
 
 
-button{
+#ekle{
     font-size: 40px;
     color: red;
     background-color: black;
 }
+#sil{
+    font-size: 30px;
+    color: rgb(0, 247, 255);
+    background: #e30909;
+}
+
 
 button:hover{
     transform: scale(0.5s);
@@ -58,6 +64,13 @@ label{
     word-wrap: break-word;
     font-size: 30px;
 }
+#plakaEkle{
+    border: 2px solid;
+    border-radius: 10px;
+    width: 50%;
+    word-wrap: break-word;
+    font-size: 30px;
+}
 #toplamArac{
     border: 2px solid;
     border-radius: 10px;
@@ -79,6 +92,8 @@ select{
     font-size: 30px;
 }
 table{
-    margin-left: 43%;
-    padding: 20px;
+    font-size: 30px;
+    background: #0984e3;
+    width: 100%;
+    color:#fff;
 }
