@@ -225,24 +225,36 @@ function fillTable(){
 }
 
 function updateRow() {
+    debugger
+
     let guncelChecked = Araba.filter(function(a) {
         return a.isChecked == true;
     });
+    console.log(guncelChecked);
 
     if (guncelChecked.length > 0) {
 
-        document.getElementById("markaSelect").value = guncelChecked.Marka;
-        document.getElementById("modelSelect").value = guncelChecked.Model;
-        document.getElementById("renkSelect").value = guncelChecked.Renk;
-        document.getElementById("fiyatEkle").value = guncelChecked.Fiyat;
-        document.getElementById("plakaEkle").value= guncelChecked.Plaka;
+        document.getElementById("markaSelect").value = marka.filter(a=>{
+            return a.name==guncelChecked[0].Marka;
+        })[0].id;
+        markaSec();
+        document.getElementById("modelSelect").value = model.filter(a=>{
+            return a.name==guncelChecked[0].Model;
+        })[0].value;
+        document.getElementById("renkSelect").value = guncelChecked[0].Renk;
+        
+        document.getElementById("fiyatEkle").value = guncelChecked[0].Fiyat;
+        document.getElementById("plakaEkle").value= guncelChecked[0].Plaka;
        
         
     } else {
         alert("İşaretli öğe bulunamadı");
     }
-
     fillTable();
+    Araba.map(a=>{
+        a.isChecked=false;
+    })
+    
 }
 
 
@@ -258,7 +270,7 @@ function deleteRow(){
 
 
     } else {
-        alert("İşaretli öğe bulunamadı");
+        alert("İşaretli öğe bulunamadi");
     }
 
 
