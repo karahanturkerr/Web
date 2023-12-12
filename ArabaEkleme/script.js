@@ -163,10 +163,12 @@ function ArabaEkle() {
             //alert("Araba Eklendi!!!")
 
 
-            /*document.getElementById("markaSelect").value = "";
-            document.getElementById("modelSelect").value = "";
-            document.getElementById("renkSelect").value = "";
-            document.getElementById("fiyatEkle").value = null;*/
+            // document.getElementById("markaSelect").value = "";
+            // document.getElementById("modelSelect").value = "";
+            // document.getElementById("renkSelect").value = "";
+            // document.getElementById("fiyatEkle").value = null;
+            // document.getElementById("plakaEkle").value= "";
+
 
             document.getElementById("toplamArac").value = Araba.length;
             document.getElementById("toplamFiyat").value = null;
@@ -213,20 +215,8 @@ function fillTable(){
 
         select.append(tr);
         x.addEventListener("click", function (t) {
-            //console.log(item);
-                //window.alert("Secilen marka " + item.Marka);
-                // Araba = [];
-                // select.removeChild(tr);
-            // let guncelIndex = Araba.findIndex(function(t){
-            //     return t.Plaka == item.Plaka
-            // });
-            // Araba.splice(guncelIndex,1);
-            // select.removeChild(tr);
-            item.isChecked = true;
-            
-
-
-                
+           
+            item.isChecked = true;      
         });
 
     }) 
@@ -241,12 +231,12 @@ function updateRow() {
 
     if (guncelChecked.length > 0) {
 
-        const yeniIsim = "Yeni Araç İsmi";
-
-        guncelChecked.forEach(function(arac) {
-            arac.isim = yeniIsim;
-        });
-
+        document.getElementById("markaSelect").value = guncelChecked.Marka;
+        document.getElementById("modelSelect").value = guncelChecked.Model;
+        document.getElementById("renkSelect").value = guncelChecked.Renk;
+        document.getElementById("fiyatEkle").value = guncelChecked.Fiyat;
+        document.getElementById("plakaEkle").value= guncelChecked.Plaka;
+       
         
     } else {
         alert("İşaretli öğe bulunamadı");
@@ -256,10 +246,21 @@ function updateRow() {
 }
 
 
-function updateRow(){
+function deleteRow(){
     let guncelChecked = Araba.filter(function(a){
         return a.isChecked == true
     });
+
+    if(guncelChecked.length > 0){
+
+        myArray = Araba.filter(item => !guncelChecked.includes(item));
+        Araba = myArray;
+
+
+    } else {
+        alert("İşaretli öğe bulunamadı");
+    }
+
 
     
 
