@@ -3,37 +3,11 @@
 .hersey{
     width: 1200px;
     height: 1200px;
-    background: gray;
+    background: aqua;
     padding: 60px;
     margin: auto;
     
 }
-.tablolar{
-    display: flex;
-    justify-content: flex-end;
-}
-.butonlar{
-    display: flex;
-    justify-content: flex-end;
-}
-
-
-#ekle{
-    font-size: 40px;
-    color: red;
-    background-color: black;
-}
-#sil{
-    font-size: 30px;
-    color: rgb(0, 247, 255);
-    background: #e30909;
-}
-#guncelle{
-    font-size: 30px;
-    color: rgb(0, 247, 255);
-    background: #e30909;
-}
-
 
 #sil:hover{
     transform: scale(0.5s);
@@ -55,55 +29,14 @@
 label{
     font-size: 50px;
 }
-#markaEkle{
+input{
     border: 2px solid;
     border-radius: 10px;
     width: 20%;
     word-wrap: break-word;
     font-size: 30px;
 }
-#modelEkle{
-    border: 2px solid;
-    border-radius: 10px;
-    width: 20%;
-    word-wrap: break-word;
-    font-size: 30px;
-}
-#renkEkle{
-    border: 2px solid;
-    border-radius: 10px;
-    width: 20%;
-    word-wrap: break-word;
-    font-size: 30px;
-}
-#fiyatEkle{
-    border: 2px solid;
-    border-radius: 10px;
-    width: 20%;
-    word-wrap: break-word;
-    font-size: 30px;
-}
-#plakaEkle{
-    border: 2px solid;
-    border-radius: 10px;
-    width: 20%;
-    word-wrap: break-word;
-    font-size: 30px;
-}
-#toplamArac{
-    border: 2px solid;
-    border-radius: 10px;
-    width: 20%;
-    word-wrap: break-word;
-    font-size: 30px;
-}
-#toplamFiyat{
-    border: 2px solid;
-    border-radius: 10px;
-    width: 20%;
-    word-wrap: break-word;
-    font-size: 30px;
-}
+
 select{
     border: 2px solid;
     border-radius: 10px;
@@ -113,8 +46,13 @@ select{
 }
 #table1{
     font-size: 30px;
-    background: #0984e3;
-    width: 40%;
+    background: black;
+    width: 50%;
     color:#fff;
-    margin-left: 540px;
+}
+
+.my-checkbox{
+    width: 20px;
+    height: 20px; 
+    padding: 5px;
 }

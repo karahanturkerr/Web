@@ -22,49 +22,49 @@ let marka = [
 
 var model = [
     {
-        name : 'Escort',
-        value:1,
-        marka:1
+        name: 'Escort',
+        value: 1,
+        marka: 1
     },
     {
-        name : 'Mustang',
-        value:2,
-        marka:1
+        name: 'Mustang',
+        value: 2,
+        marka: 1
     },
     {
-        name : 'E30',
-        value:3,
-        marka:2
+        name: 'E30',
+        value: 3,
+        marka: 2
     },
     {
-        name : 'Şahin',
-        value:4,
-        marka:3
+        name: 'Şahin',
+        value: 4,
+        marka: 3
     },
     {
-        name : 'Kartal',
-        value:5,
-        marka:3
+        name: 'Kartal',
+        value: 5,
+        marka: 3
     },
     {
-        name : 'Doğan',
-        value:6,
-        marka:3
+        name: 'Doğan',
+        value: 6,
+        marka: 3
     },
     {
-        name : 'Megane',
-        value:7,
-        marka:4
+        name: 'Megane',
+        value: 7,
+        marka: 4
     },
     {
-        name : 'Clio',
-        value:8,
-        marka:4
+        name: 'Clio',
+        value: 8,
+        marka: 4
     },
     {
-        name : 'M CS',
-        value:9,
-        marka:2
+        name: 'M CS',
+        value: 9,
+        marka: 2
     },
 ];
 
@@ -74,21 +74,20 @@ let renk = [
 
 
 
-function markaSec()
-{
+function markaSec() {
     let markaSelect = document.getElementById("markaSelect").value;
     let modelSelect = document.getElementById("modelSelect");
 
 
-    let guncelMarka = model.filter(function(f){
+    let guncelMarka = model.filter(function (f) {
 
         return f.marka == markaSelect
-        
-     }); 
 
-     modelSelect.innerHTML = '';
+    });
 
-     guncelMarka.forEach(item => {
+    modelSelect.innerHTML = '';
+
+    guncelMarka.forEach(item => {
         let option = document.createElement("option");
         option.innerHTML = item.name;
         option.value = item.value;
@@ -127,7 +126,7 @@ function ArabaEkle() {
     var y = model.find(function (f) {
         return f.value == secilenModel
     });
-    
+
 
     if (model == "" || fiyat == "" || marka == "" || renk == "") {
         alert("lütfen bos yer birakmayiniz")
@@ -139,37 +138,29 @@ function ArabaEkle() {
         else {
 
 
-            let guncelPlaka = Araba.filter(function(f){
+            let guncelPlaka = Araba.filter(function (f) {
 
                 return f.Plaka == plaka
             });
 
-            if(guncelPlaka.length > 0){
+            if (guncelPlaka.length > 0) {
                 alert("Aynı plaka eklenemez");
                 return;
             }
-            
+
             Araba.push({
-                Marka : x.name,
+                Marka: x.name,
                 Model: y.name,
                 Renk: secilenRenk,
                 Fiyat: fiyat,
                 Plaka: plaka,
-                isChecked : false,
+                isChecked: false,
+                isChecked2: false,
 
             });
-            
+
+
             Toplam = Number(Toplam) + Number(fiyat);
-            //alert("Araba Eklendi!!!")
-
-
-            // document.getElementById("markaSelect").value = "";
-            // document.getElementById("modelSelect").value = "";
-            // document.getElementById("renkSelect").value = "";
-            // document.getElementById("fiyatEkle").value = null;
-            // document.getElementById("plakaEkle").value= "";
-
-
             document.getElementById("toplamArac").value = Araba.length;
             document.getElementById("toplamFiyat").value = null;
 
@@ -184,7 +175,7 @@ function ArabaEkle() {
 
 }
 
-function fillTable(){
+function fillTable() {
 
     var select = document.querySelector("#table1 tbody");
     select.innerHTML = "";
@@ -197,14 +188,19 @@ function fillTable(){
         var tFiyat = document.createElement("td");
         var x = document.createElement("INPUT");
         x.setAttribute("type", "checkbox");
-        
+        x.classList.add("my-checkbox");
+
+        var y = document.createElement("INPUT");
+        y.setAttribute("type", "checkbox");
+        y.classList.add("my-checkbox");
+
         tPlaka.innerHTML = item.Plaka;
         tMarka.innerHTML = item.Marka;
         tModel.innerHTML = item.Model;
         tRenk.innerHTML = item.Renk;
         tFiyat.innerHTML = item.Fiyat;
 
-        let tr=document.createElement("tr");
+        let tr = document.createElement("tr");
 
         tr.append(x);
         tr.append(tPlaka);
@@ -212,58 +208,182 @@ function fillTable(){
         tr.append(tModel);
         tr.append(tRenk);
         tr.append(tFiyat);
+        tr.append(y);
 
         select.append(tr);
         x.addEventListener("click", function (t) {
-           
-            item.isChecked = true;      
+
+            item.isChecked = true;
         });
 
-    }) 
+        y.addEventListener("click", function (t) {
+
+            item.isChecked2 = !item.isChecked2;
+
+            fillRow();
+
+            console.log(item.isChecked2);
+
+            document.getElementById("plakaEkle").disabled = item.isChecked2;
+
+            
+
+
+            // if (item.isChecked2) {
+            //     item.isChecked2 = false;
+            //     document.getElementById("plakaEkle").disabled = false;
+
+
+            // } else {
+            //     item.isChecked2 = true;
+            //     fillRow();
+            //     document.getElementById("plakaEkle").disabled = true;
+            //     item.isChecked2 = true;
+            // }
+        });
+        
+
+
+    })
 
 
 }
 
-function updateRow() {
-    debugger
+function fillRow() {
 
-    let guncelChecked = Araba.filter(function(a) {
-        return a.isChecked == true;
+    let guncelChecked = Araba.filter(function (a) {
+        return a.isChecked2 == true;
     });
-    console.log(guncelChecked);
 
-    if (guncelChecked.length > 0) {
 
-        document.getElementById("markaSelect").value = marka.filter(a=>{
-            return a.name==guncelChecked[0].Marka;
+    if (guncelChecked.length == 1) {
+
+        document.getElementById("markaSelect").value = marka.filter(a => {
+            return a.name == guncelChecked[0].Marka;
         })[0].id;
         markaSec();
-        document.getElementById("modelSelect").value = model.filter(a=>{
-            return a.name==guncelChecked[0].Model;
+        document.getElementById("modelSelect").value = model.filter(a => {
+            return a.name == guncelChecked[0].Model;
         })[0].value;
         document.getElementById("renkSelect").value = guncelChecked[0].Renk;
-        
+
         document.getElementById("fiyatEkle").value = guncelChecked[0].Fiyat;
-        document.getElementById("plakaEkle").value= guncelChecked[0].Plaka;
-       
-        
-    } else {
-        alert("İşaretli öğe bulunamadı");
+        document.getElementById("plakaEkle").value = guncelChecked[0].Plaka;
+
+
+    } 
+    else if(guncelChecked == 0)
+    {
+        fillTable();
+
     }
-    fillTable();
-    Araba.map(a=>{
-        a.isChecked=false;
-    })
     
+    else {
+        alert("birden fazla secim yapıldı!!!");
+        fillTable();
+        Araba.map(a => {
+            a.isChecked2 = false;
+        })
+    }
+
+
+
+
+
+}
+
+function updateRow() 
+{
+
+    var checkedControl = Araba.filter(function(d){
+
+       return d.isChecked2 == true; 
+    });
+
+    if(checkedControl.length == 0){
+        alert("araba seç");
+        return;
+    }
+    else{
+    GuncelArabaEkle();
+    document.getElementById("plakaEkle").disabled = false; 
+
+
+    }
+
+
+
+}
+function GuncelArabaEkle() {
+
+    var secilenMarka = document.getElementById("markaSelect").value;
+    var secilenModel = document.getElementById("modelSelect").value;
+    var secilenRenk = document.getElementById("renkSelect").value;
+    var fiyat = document.getElementById("fiyatEkle").value;
+    var plaka = document.getElementById("plakaEkle").value;
+
+    var x = marka.find(function (f) {
+        return f.id == secilenMarka
+    });
+    var y = model.find(function (f) {
+        return f.value == secilenModel
+    });
+
+
+    if (model == "" || fiyat == "" || marka == "" || renk == "") {
+        alert("lütfen bos yer birakmayiniz")
+    }
+    else {
+        if (fiyat > 100000 || fiyat < 0) {
+            alert("fiyat 100.000'den fazla veya 0'dan az olamaz")
+        }
+        else {
+            
+            var updateObj = {
+                Marka: x.name,
+                Model: y.name,
+                Renk: secilenRenk,
+                Fiyat: fiyat,
+                Plaka: plaka,
+                isChecked: false,
+                isChecked2: false,
+            };
+
+
+            var updateIndex = Araba.findIndex(function(da){
+                return da.Plaka == updateObj.Plaka;
+            });
+
+            
+            
+            if(updateIndex == -1) return;
+            
+            console.log(Araba[updateIndex],updateObj);
+
+            Araba[updateIndex] = updateObj;
+
+            Toplam = Number(Toplam) + Number(fiyat);
+            document.getElementById("toplamArac").value = Araba.length;
+            document.getElementById("toplamFiyat").value = null;
+
+            document.getElementById("toplamFiyat").value = Toplam;
+
+        }
+
+        fillTable();
+
+
+    }
+
 }
 
 
-function deleteRow(){
-    let guncelChecked = Araba.filter(function(a){
+function deleteRow() {
+    let guncelChecked = Araba.filter(function (a) {
         return a.isChecked == true
     });
 
-    if(guncelChecked.length > 0){
+    if (guncelChecked.length > 0) {
 
         myArray = Araba.filter(item => !guncelChecked.includes(item));
         Araba = myArray;
@@ -273,19 +393,13 @@ function deleteRow(){
         alert("İşaretli öğe bulunamadi");
     }
 
-
-    
-
-    
-
-
-
     fillTable();
 
 
 }
 
-function loadColor(){
+
+function loadColor() {
     let select = document.getElementById("renkSelect");
 
     renk.forEach(item => {

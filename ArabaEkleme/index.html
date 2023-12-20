@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Araba</title>
+    <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="styles.css">
 
 </head>
@@ -13,44 +14,17 @@
 </script>
 
 <body>
- <div class = "hersey">   
+ 
+<div class="hersey">
 
-<div class="tablolar">
-                <table border="1" id="table1" bordercolor="black">
-                    <thead>
-                        <tr>
-                            <th>
-                            </th>
-                            <th>Plaka</th>
-                            <th>Marka</th>
-                            <th>Model</th>
-                            <th>Renk</th>
-                            <th>Fiyat</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        
-                        
-                    </tbody>
-
-                        
+            
 
 
-                </table>
-            </div>
-            <div class = "butonlar">
-                <button onclick="deleteRow()" id="sil">sil</button>
-                <button onclick="updateRow()" id="guncelle">güncelle</button>
+    <div  class="row">
 
-            </div>
-
-
-    <div class="araba">
-
-            <div class="girdi">
+            <div class="col">
                 <label>Marka : </label>
-                <select onchange="markaSec()" id="markaSelect">
+                <select  onchange="markaSec()" id="markaSelect">
                 </select>
                 <br><br><br>
                 <label>Model : </label>
@@ -68,24 +42,55 @@
                 <input type="text" id="plakaEkle" />
                 <br><br>
                 <div class="buton">
-                    <button onclick="ArabaEkle()" id="ekle">Ekle</button>
+                    <button class="btn btn-dark" onclick="ArabaEkle()" id="ekle">Ekle</button>
                 </div>
                 <br><br><br>
-    
-                <label for="toplamArac">Toplam Araç : </label>
+    </div>
+    <div class="col">
+        <label for="toplamArac">Toplam Araç : </label>
                 <input type="number" id="toplamArac" />
                 <br><br>
                 
                 <label for="toplamFiyat">Toplam Fiyat : </label>
                 <input type="number" id="toplamFiyat" />
 
-       
-            </div>
+    </div>
+            
+    </div>
+    <div class="row">
+        <table class="table table-dark" border="1" id="table1" bordercolor="black">
+            <thead>
+                <tr>
+                    <th>
+                    </th>
+                    <th>Plaka</th>
+                    <th>Marka</th>
+                    <th>Model</th>
+                    <th>Renk</th>
+                    <th>Fiyat</th>
+                    <th>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
 
+                
+                
+            </tbody>
+
+            
+        </table>
+
+        <div class = "butonlar">
+            <button class="btn btn-danger" onclick="deleteRow()" id="sil">sil</button>
+            <button class="btn btn-primary" onclick="updateRow()" id="guncelle">güncelle</button>
+
+        </div>    
     </div>
 
-
+    <script src = "bootstrap.js"></script>
     <script src="script.js"></script>
+    
 
 </div>
 
